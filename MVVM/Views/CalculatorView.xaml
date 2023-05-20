@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Calculator.MVVM.Views.CalculatorView"
+    Title="Calculator">
+
+    <Grid 
+        Padding="5,0"
+        BackgroundColor="Black"
+        ColumnSpacing="1"
+        RowSpacing="1">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label            
+            Grid.ColumnSpan="4"
+            Grid.Row="0"
+            Grid.RowSpan="1"
+            BackgroundColor="Black"
+            FontAttributes="Bold"
+            FontSize="28"
+            LineBreakMode="NoWrap"
+            HorizontalTextAlignment="End"
+            TextColor="White"
+            VerticalTextAlignment="Center"
+            Text="{Binding Expression}"
+            />
+
+        <Label 
+            Grid.ColumnSpan="4"
+            Grid.RowSpan="1"
+            Grid.Row="1"
+            BackgroundColor="Black"
+            FontAttributes="Bold"
+            FontSize="36"
+            HorizontalTextAlignment="End"
+            LineBreakMode="NoWrap"
+            Text="{Binding Result, StringFormat='{0:N2}'}"
+            TextColor="White"
+            VerticalTextAlignment="Center"
+            />
+        
+        <Button
+            Command="{Binding CleanClickCommand}"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="1"
+            BackgroundColor="DarkRed"
+            FontSize="28"
+            Text="AC"
+            TextColor="White"
+            CornerRadius="30"             
+            />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            BackgroundColor="DarkRed"
+            FontSize="28"
+            Text="&lt;"
+            Command="{Binding ClickUndoCommand}" 
+            TextColor="White"
+            CornerRadius="30"         
+            /> 
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="3"
+            BackgroundColor="SaddleBrown"
+            FontSize="28"
+            Text="/"
+            Command="{Binding ClickOperatorCommand}"
+            CommandParameter="/"
+            TextColor="White"
+            CornerRadius="30"              
+            />
+        
+        <Button            
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.RowSpan="1"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="7"
+            Command="{Binding ClickCommand}"
+            CommandParameter="7"
+            TextColor="White"
+            CornerRadius="30"            
+            />
+        
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.RowSpan="1"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="8"
+            Command="{Binding ClickCommand}"
+            CommandParameter="8"
+            TextColor="White"
+            CornerRadius="30"             
+            />
+        
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="9"
+            Command="{Binding ClickCommand}"
+            CommandParameter="9"
+            TextColor="White"
+            CornerRadius="30"             
+            />
+        
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            BackgroundColor="SaddleBrown"
+            FontSize="28"
+            Text="x"
+            Command="{Binding ClickOperatorCommand}"
+            CommandParameter="*"
+            TextColor="White"
+            CornerRadius="30"            
+            />
+        
+        <Button            
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.RowSpan="1"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="4"
+            Command="{Binding ClickCommand}"
+            CommandParameter="4"            
+            TextColor="White"
+            CornerRadius="30"             
+            />
+        
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.RowSpan="1"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="5"
+            Command="{Binding ClickCommand}"
+            CommandParameter="5"            
+            TextColor="White"
+            CornerRadius="30"             
+            />
+        
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="6"
+            Command="{Binding ClickCommand}"
+            CommandParameter="6"            
+            TextColor="White"
+            CornerRadius="30"             
+            />
+        
+        <Button
+            Grid.Row="4"
+            Grid.Column="3"
+            BackgroundColor="SaddleBrown"
+            FontSize="28"
+            Text="-"
+            Command="{Binding ClickOperatorCommand}"
+            CommandParameter="-"
+            TextColor="White"
+            CornerRadius="30"             
+            />
+        
+        <Button            
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.RowSpan="1"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="1"
+            Command="{Binding ClickCommand}"
+            CommandParameter="1"            
+            TextColor="White"
+            CornerRadius="30"           
+            />
+        
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            Grid.RowSpan="1"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="2"
+            Command="{Binding ClickCommand}"
+            CommandParameter="2"            
+            TextColor="White"
+            CornerRadius="30"           
+            />
+        
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="3"
+            Command="{Binding ClickCommand}"
+            CommandParameter="3"            
+            TextColor="White"
+            CornerRadius="30"              
+            />
+        
+        <Button
+            Grid.Row="5"
+            Grid.Column="3"
+            BackgroundColor="SaddleBrown"
+            FontSize="28"
+            Text="+"
+            Command="{Binding ClickOperatorCommand}"
+            CommandParameter="+"
+            TextColor="White"
+            CornerRadius="30"            
+            />
+
+        <Button            
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.RowSpan="1" 
+            BackgroundColor="DarkCyan"
+            FontSize="28"
+            Text="0"
+            Command="{Binding ClickCommand}"
+            CommandParameter="0"            
+            TextColor="White"
+            CornerRadius="30"         
+            />
+
+        <Button            
+            Grid.Row="6"
+            Grid.Column="1"
+            Grid.RowSpan="1" 
+            BackgroundColor="SaddleBrown"
+            FontSize="28"
+            Text="("
+            Command="{Binding ClickOperatorCommand}"
+            CommandParameter="("            
+            TextColor="White"
+            CornerRadius="30"         
+            />
+
+        <Button            
+            Grid.Row="6"
+            Grid.Column="2"
+            Grid.RowSpan="1" 
+            BackgroundColor="SaddleBrown"
+            FontSize="28"
+            Text=")"
+            Command="{Binding ClickOperatorCommand}"
+            CommandParameter=")"            
+            TextColor="White"
+            CornerRadius="30"         
+            />
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="3"
+            BackgroundColor="SaddleBrown"
+            FontSize="28"
+            Text="="
+            Command="{Binding ResultClickCommand}"
+            TextColor="White"
+            CornerRadius="30"         
+            />
+
+    </Grid>
+</ContentPage>
